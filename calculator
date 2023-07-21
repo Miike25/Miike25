@@ -1,0 +1,23 @@
+print ("Welcome to calculator!")
+q1 = int (input("Enter a number : "))
+q2 = int (input("Enter a number : "))
+
+v = int (input("Which operation do you want to use? \n 1 Eddition \n 2 Subtraction \n 3 Division \n 4 Multiplication \n"))
+
+if v == 1:
+    r = q1 + q2
+    p = 'Eddition'
+    t = p
+if v == 2:
+    r = q1 - q2
+    l = 'Subtraction'
+    t = l
+if v == 3:
+    r = float(q1 / q2)
+    m = 'Division'
+    t = m
+if v == 4:
+    r = q1 * q2
+    n = "Multiplication"
+    t = n
+print ('Result',t,'=',r)
