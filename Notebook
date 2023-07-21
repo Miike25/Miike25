@@ -1,0 +1,44 @@
+def show_menu():
+    print("1. Переглянути замітки")
+    print("2. Додати нову замітку")
+    print("3. Зберегти замітки в файл")
+    print("4. Вийти")
+
+def display_notes(notes):
+    if not notes:
+        print("Заміток немає.")
+        return
+    print("Замітки:")
+    for i, note in enumerate(notes, 1):
+        print(f"{i}. {note}")
+
+def add_note(notes):
+    new_note = input("Введіть нову замітку: ")
+    notes.append(new_note)
+    print("Замітка успішно додана.")
+
+def save_notes_to_file(notes, filename):
+    with open(filename, "w") as file:
+        file.write("\n".join(notes))
+    print(f"Замітки збережені у файл {filename}.")
+
+def main():
+    notes = []
+    while True:
+        show_menu()
+        choice = input("Виберіть опцію: ")
+        if choice == "1":
+            display_notes(notes)
+        elif choice == "2":
+            add_note(notes)
+        elif choice == "3":
+            filename = input("Введіть ім'я файлу для збереження заміток: ")
+            save_notes_to_file(notes, filename)
+        elif choice == "4":
+            print("До побачення!")
+            break
+        else:
+            print("Невірний вибір. Спробуйте ще раз.")
+
+if __name__ == "__main__":
+    main()
